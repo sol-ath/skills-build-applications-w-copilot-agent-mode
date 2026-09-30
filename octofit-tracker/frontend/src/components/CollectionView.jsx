@@ -20,7 +20,7 @@ function formatValue(value) {
   return String(value)
 }
 
-function CollectionView({ collection, title, intro, fields }) {
+function CollectionView({ collection, endpoint, title, intro, fields }) {
   const [items, setItems] = useState([])
   const [status, setStatus] = useState('loading')
   const [error, setError] = useState('')
@@ -57,6 +57,7 @@ function CollectionView({ collection, title, intro, fields }) {
         <p className="eyebrow">OctoFit Tracker</p>
         <h1>{title}</h1>
         <p>{intro}</p>
+        <code className="endpoint">{endpoint}</code>
       </div>
 
       {status === 'loading' && <p className="notice">Loading {title.toLowerCase()}...</p>}
