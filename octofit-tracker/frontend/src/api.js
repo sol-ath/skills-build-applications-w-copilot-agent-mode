@@ -22,8 +22,8 @@ export const apiEndpoints = {
     : 'http://localhost:8000/api/workouts/',
 }
 
-export function getApiEndpoint(component) {
-  return apiEndpoints[component] ?? `${apiBaseUrl}/${component}/`
+export function getApiEndpoint(component, apiPath = `/${component}/`) {
+  return apiEndpoints[component] ?? `${apiBaseUrl}${apiPath}`
 }
 
 export function normalizeApiData(payload) {
