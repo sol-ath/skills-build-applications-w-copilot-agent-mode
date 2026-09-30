@@ -4,8 +4,26 @@ export const apiBaseUrl = codespaceName
   ? `https://${codespaceName}-8000.app.github.dev/api`
   : 'http://localhost:8000/api'
 
+export const apiEndpoints = {
+  activities: codespaceName
+    ? `https://${codespaceName}-8000.app.github.dev/api/activities/`
+    : 'http://localhost:8000/api/activities/',
+  leaderboard: codespaceName
+    ? `https://${codespaceName}-8000.app.github.dev/api/leaderboard/`
+    : 'http://localhost:8000/api/leaderboard/',
+  teams: codespaceName
+    ? `https://${codespaceName}-8000.app.github.dev/api/teams/`
+    : 'http://localhost:8000/api/teams/',
+  users: codespaceName
+    ? `https://${codespaceName}-8000.app.github.dev/api/users/`
+    : 'http://localhost:8000/api/users/',
+  workouts: codespaceName
+    ? `https://${codespaceName}-8000.app.github.dev/api/workouts/`
+    : 'http://localhost:8000/api/workouts/',
+}
+
 export function getApiEndpoint(component) {
-  return `${apiBaseUrl}/${component}/`
+  return apiEndpoints[component] ?? `${apiBaseUrl}/${component}/`
 }
 
 export function normalizeApiData(payload) {
