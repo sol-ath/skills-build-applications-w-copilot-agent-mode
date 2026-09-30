@@ -1,0 +1,59 @@
+:root {
+  --text: #334155;
+  --text-h: #0f172a;
+  --muted: #64748b;
+  --bg: #f7fbf8;
+  --panel: #ffffff;
+  --border: #dbe7df;
+  --accent: #167a5a;
+  --shadow:
+    rgba(15, 23, 42, 0.08) 0 10px 15px -3px, rgba(15, 23, 42, 0.04) 0 4px 6px -2px;
+
+  --sans: Avenir Next, Avenir, Verdana, sans-serif;
+  --heading: Georgia, Cambria, serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 16px/145% var(--sans);
+  letter-spacing: 0;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(22, 122, 90, 0.16), transparent 30rem),
+    linear-gradient(135deg, #f7fbf8 0%, #edf7f0 45%, #f8fafc 100%);
+  margin: 0;
+}
+
+#root {
+  min-width: 320px;
+  min-height: 100svh;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 44px;
+  letter-spacing: 0;
+  margin: 0;
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: 0;
+  margin: 0 0 8px;
+}
+p {
+  margin: 0;
+}
