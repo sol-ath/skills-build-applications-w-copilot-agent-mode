@@ -1,13 +1,14 @@
 import CollectionView from './CollectionView.jsx'
-import { getApiEndpoint } from '../api.js'
 
-const apiPath = '/api/activities/'
+const apiEndpoint = import.meta.env.VITE_CODESPACE_NAME
+  ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/activities/`
+  : 'http://localhost:8000/api/activities/'
 
 function Activities() {
   return (
     <CollectionView
       collection="activities"
-      endpoint={getApiEndpoint('activities', apiPath.replace('/api', ''))}
+      endpoint={apiEndpoint}
       title="Activities"
       intro="Recent workouts and movement sessions logged by OctoFit users."
       fields={["user", "type", "durationMinutes", "caloriesBurned", "completedAt"]}
